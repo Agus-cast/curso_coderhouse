@@ -1,145 +1,155 @@
-/* estilos generales */
-body{
-    font-family:"Lato", sans-serif;
+/**********************cambios generales *******************/
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lato", sans-serif;
 }
 
-h1{
+h1 {
+    font-size: 39px;
+    padding: 0;
+    margin: 25px;
+    text-align: center;
+    background-color: hsl(0, 79%, 49%);
+}
+
+h2 {
     font-size: 39px;
     padding-top: 50px;
     text-align: center;
 }
 
-
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
     color: white;
 }
 
-small{
+small {
     color: white;
     font-weight: 300;
     background-color: hsl(0, 79%, 49%);
 }
 
-p{
-    font-size: 20px;
+p {
+    text-align: justify;
+    /* font-size: 1.4rem; */
 }
-    
-img{
+
+img {
     width: 500px;
 }
 
-
-/* header */
-
-header nav{
+/**********************cosas del header *******************/
+header nav {
     background-color: hsl(0, 79%, 49%);
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
 }
 
-header nav ul{
+header nav ul {
     display: flex;
     gap: 50px;
     background-color: hsl(0, 79%, 49%);
     text-transform: uppercase;
-    list-style-type: none;  
+    list-style-type: none;
 }
 
-.logo{
+.logo {
     display: flex;
-
 }
 
-.navbar{
+.navbar {
     background-color: #ec1313 !important;
 }
 
-.collapse   {
+.collapse {
     justify-content: end;
 }
 
-.active{
+.carousel-caption p,
+h5 {
+    width: fit-content;
+    background-color: #ec1313;
+}
+
+.active {
     color: rgb(255, 255, 255);
     background-color: #7c0505;
 }
 
-/* main */
+/**********************cosas del main *******************/
+section {
+    flex: 1;
+}
 
-
-
-.hero{
-    max-width:  1100px;
+.hero {
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.hero img{
+.hero img {
     width: 100%;
 }
 
-.subtitulo{
+.card-camiseta {
+    margin: 10px;
+}
+
+.subtitulo {
     font-size: 35px;
     text-transform: uppercase;
-    background-color:#ec1313;
+    background-color: #ec1313;
 }
 
-.sub_historia{
+.sub_historia {
     font-size: 25px;
     text-transform: uppercase;
-    background-color:#ec1313;
+    background-color: #ec1313;
 }
 
-.plantel{
+.plantel {
     align-items: center;
     justify-content: center;
 }
 
-.jugadores{
+.jugadores {
     margin: 10px;
 }
 
-.card-body{
+.card-body {
     background-color: #ec1313;
     color: aliceblue;
     border-radius: 20px;
 }
 
-
-.carousel-caption p, h5{
-    width:fit-content;
-    background-color: #ec1313;
-}
-
-
-.camisetas{
+.camisetas {
     align-items: center;
     justify-content: center;
 }
 
-.camiseta{
+.camiseta {
     margin: 10px;
 }
 
-
-
-
-/* footer */
-
-footer{
+/**********************cosas del footer *******************/
+footer {
+    margin-top: auto;
     display: flex;
     justify-content: end;
     align-items: center;
     max-width: 100%;
-    margin: 0 auto;
     background-color: #ec1313;
-    
+    color: white;
 }
-.social_icons{
+
+.social_icons {
     font-size: 50px;
     color: white;
     background-color: #ec1313;
     margin-right: 50px;
 }
-
