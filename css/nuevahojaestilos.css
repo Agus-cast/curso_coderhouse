@@ -1,0 +1,185 @@
+/********************** Variables ***********************/
+/********************** Mixins ***********************/
+/********************** Placeholders (para @extend) ***********************/
+.card-body, .camisetas .card-camiseta, .camisetas .camiseta {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+/********************** Generales ***********************/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: 39px;
+  text-transform: uppercase;
+  background-color: hsl(0, 79%, 49%);
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.4);
+  padding: 0;
+  margin: 25px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 39px;
+  text-transform: uppercase;
+  padding-top: 50px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+small {
+  color: white;
+  font-weight: 300;
+  background-color: hsl(0, 79%, 49%);
+}
+
+p {
+  text-align: justify;
+}
+
+img {
+  width: 500px;
+}
+
+/********************** Header ***********************/
+header nav {
+  background-color: hsl(0, 79%, 49%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  background-color: hsl(0, 79%, 49%);
+  text-transform: uppercase;
+  list-style-type: none;
+}
+header nav ul li a {
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+header nav ul li a:hover {
+  transform: scale(1.1);
+  background-color: hsl(0, 79%, 39%);
+  color: white !important;
+  border-radius: 20px;
+  box-shadow: grey inset;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  background-color: #ec1313 !important;
+}
+
+.collapse {
+  justify-content: end;
+}
+
+.carousel-caption p,
+.carousel-caption h5 {
+  width: fit-content;
+  background-color: #ec1313;
+}
+
+.active {
+  color: white;
+  background-color: rgb(141.6, 11.4, 11.4);
+}
+
+/********************** Main ***********************/
+section {
+  flex: 1;
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.hero img {
+  width: 100%;
+}
+
+.subtitulo {
+  font-size: 35px;
+  text-transform: uppercase;
+  background-color: #ec1313;
+}
+
+.sub_historia {
+  font-size: 25px;
+  text-transform: uppercase;
+  background-color: #ec1313;
+}
+
+.plantel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plantel .jugadores {
+  width: 18rem;
+  margin: 10px;
+  margin: 10px;
+  padding-bottom: 10px;
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.4);
+}
+
+.camisetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.camisetas .card-camiseta {
+  width: 18rem;
+  margin: 10px;
+  padding-bottom: 15px;
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+  background-color: #ec1313;
+  color: aliceblue;
+}
+
+/********************** Footer ***********************/
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 100%;
+  background-color: #ec1313;
+  color: white;
+}
+
+.social_icons {
+  font-size: 50px;
+  color: white;
+  background-color: #ec1313;
+  margin-right: 50px;
+}
+
+/*# sourceMappingURL=nuevahojaestilos.css.map */

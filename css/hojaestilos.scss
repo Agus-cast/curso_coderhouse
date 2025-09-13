@@ -1,0 +1,233 @@
+/********************** Variables ***********************/
+$color-principal: #ec1313;
+$color-secundario: hsl(0, 79%, 49%);
+$color-texto: white;
+
+$font-principal: "Lato", sans-serif;
+$spacing: 10px;
+
+/********************** Mixins ***********************/
+
+
+
+
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+@mixin titulo($size, $bg: null) {
+    font-size: $size;
+    text-transform: uppercase;
+
+    @if $bg {
+        background-color: $bg;
+    }
+}
+
+
+@mixin hover-scale(){
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.1); // crece un 10%
+                        background-color: darken($color-secundario, 10%); // opcional
+                        color: white !important;
+                        border-radius: 20px;
+                        box-shadow: grey inset;
+                    }
+}
+
+@mixin shadow($x: 0,
+    $y: 4px,
+    $blur: 10px,
+    $spread: 0,
+    $color: rgba(0, 0, 0, 0.3),
+    $inset: false) {
+    @if $inset {
+        box-shadow: inset $x $y $blur $spread $color;
+    }
+
+    @else {
+        box-shadow: $x $y $blur $spread $color;
+    }
+}
+
+
+
+
+
+/********************** Placeholders (para @extend) ***********************/
+%card {
+    border-radius: 20px;
+    padding: $spacing;
+    margin: $spacing;
+}
+
+/********************** Generales ***********************/
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-principal;
+}
+
+h1 {
+    @include titulo(39px, $color-secundario);
+    @include shadow(5px, 5px, 15px, 0, rgba(0, 0, 0, 0.4));
+    padding: 0;
+    margin: 25px;
+    text-align: center;
+}
+
+h2 {
+    @include titulo(39px);
+    padding-top: 50px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: $color-texto;
+}
+
+small {
+    color: $color-texto;
+    font-weight: 300;
+    background-color: $color-secundario;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    width: 500px;
+}
+
+/********************** Header ***********************/
+header {
+    nav {
+        background-color: $color-secundario;
+        @include flex-center(space-between);
+
+        ul {
+            @include flex-center(flex-start);
+            gap: $spacing * 5; // uso de operadores
+            background-color: $color-secundario;
+            text-transform: uppercase;
+            list-style-type: none;
+
+            li {
+                a {
+                    color: $color-texto;
+                    padding: 10px 20px;
+                    display: inline-block;
+                    @include hover-scale();
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    @include flex-center;
+}
+
+.navbar {
+    background-color: $color-principal !important;
+}
+
+.collapse {
+    justify-content: end;
+}
+
+.carousel-caption {
+
+    p,
+    h5 {
+        width: fit-content;
+        background-color: $color-principal;
+    }
+}
+
+.active {
+    color: $color-texto;
+    background-color: darken($color-principal, 20%); // operador con función Sass
+}
+
+/********************** Main ***********************/
+section {
+    flex: 1;
+}
+
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2 * $spacing;
+
+    img {
+        width: 100%;
+    }
+}
+
+.subtitulo {
+    @include titulo(35px, $color-principal);
+}
+
+.sub_historia {
+    @include titulo(25px, $color-principal);
+}
+
+.plantel {
+    @include flex-center;
+
+    .jugadores {
+        width: 18rem;
+        margin: 10px;
+        margin: $spacing;
+        padding-bottom: $spacing;
+        @include shadow(5px, 5px, 15px, 0, rgba(0, 0, 0, 0.4));
+    }
+}
+
+.camisetas {
+    @include flex-center;
+    .camiseta {
+        @extend %card;
+    }
+
+    .card-camiseta {
+        width: 18rem;
+        margin: 10px;
+        @extend %card;
+        padding-bottom: 1.5 * $spacing; // operador
+        @include shadow(5px, 5px, 15px, 0, rgba(0, 0, 0, 0.4));
+    }
+}
+
+.card-body {
+    @extend %card;
+    background-color: $color-principal;
+    color: aliceblue;
+}
+
+/********************** Footer ***********************/
+footer {
+    margin-top: auto;
+    @include flex-center(flex-end);
+    max-width: 100%;
+    background-color: $color-principal;
+    color: $color-texto;
+}
+
+.social_icons {
+    font-size: 5 * $spacing;
+    color: $color-texto;
+    background-color: $color-principal;
+    margin-right: 5 * $spacing;
+}
